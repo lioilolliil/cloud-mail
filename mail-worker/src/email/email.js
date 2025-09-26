@@ -119,7 +119,7 @@ export async function email(message, env, ctx) {
 			text: email.text,
 			cc: email.cc ? JSON.stringify(email.cc) : '[]',
 			bcc: email.bcc ? JSON.stringify(email.bcc) : '[]',
-			recipient: JSON.stringify(email.to),
+			recipient: email.to ? JSON.stringify(email.to) : '[]',
 			inReplyTo: email.inReplyTo,
 			relation: email.references,
 			messageId: email.messageId,
